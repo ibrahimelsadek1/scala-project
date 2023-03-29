@@ -245,7 +245,7 @@ object run1 extends App {
 
     }
 
-    val z =source.map(ThirtyDaysDiscounts)
+    source.map(ThirtyDaysDiscounts)
       .map(WineOrCheeseDiscount)
       .map(March23Discount)
       .map(MoreThanFiveDiscount)
@@ -253,8 +253,8 @@ object run1 extends App {
       .map(applyVisaDiscounts)
       .map(Top2DiscountsAvg)
       .map(calcPrice)
-//      .map(insertData)
-        print(z)
+      .map(insertData)
+       
     if (conn != null) conn.close()
     if (source_file != null) source_file.close()
 
